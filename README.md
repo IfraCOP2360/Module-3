@@ -1,23 +1,26 @@
 # Module-3
-Console.WriteLine ("Enter the number of pandas: ");
+// Prompt the user to enter the number of students
+Console.WriteLine ("Enter the number of students: ");
 String input1 = Console.ReadLine();
-int numPandas = Convert.ToInt32(input1);
+int numStudents = Convert.ToInt32(input1);
 
-Console.WriteLine ("Number of pandas: " + numPandas);     // Number of pandas: 1
-  Panda p = new Panda { Name = " " };
-
-for (int i = 1; i <= numPandas; i++)
+Console.WriteLine ("Number of Students: " + numStudents);     // Number of Students: 1
+// Create a new Student object
+  Student s = new Student { Name = " " };
+// Loop through the number of students and prompt for their names
+for (int i = 1; i <= numStudents; i++)
 {
-  Console.WriteLine ("Enter the name of panda " + (i) + ": ");
+  Console.WriteLine ("Enter the name of Student " + (i) + ": ");
   String name = Console.ReadLine();
-    p.Name = name;
-
-  Console.WriteLine ("Panda {0} name: {1}", i, p.ToString());
+    s.Name = name;
+// Display the student's name using the overridden ToString() method
+  Console.WriteLine ("Student {0} name: {1}", i, s.ToString());
 }
 
-
-public class Panda
+// Create a new Student object and set its name
+public class Student
 {
   public string Name;
+  // Override the ToString() method to return the student's name
   public override string ToString() { return Name; }
 }
